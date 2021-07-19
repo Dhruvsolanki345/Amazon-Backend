@@ -9,6 +9,10 @@ const port = process.env.PORT || 80;
 app.use(cors({ origin: true }));
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.redirect('https://clone-62791.web.app/');
+});
+
 app.post('/payments/create',async (req, res) => {
     const total = req.query.total;
 
